@@ -9,16 +9,31 @@ namespace csharp_gestore_eventi
     internal class Event
     {
         public string? Title { get; set; }
-        public DateTime Data { get; set; }
+        DateTime  data;
         private int _capienza;
         private  int Prenotazioni;
 
-        public Event(string Title, DateTime Data, int _capienza)
+        public Event(string Title, string data, int _capienza) // la data la passo come stringa perchè al momento dell'immissione è una stringa; poi nel blocco tras
+            // trasformo  il tipo data in DateTime. Quindi come argomento del construttore posso passare qualsiasi tipo basta che poi nel blocco esso diventi il tipo
+            //richiesto nella struttura del codice
         {
-            this.Title = Title;
-            this.Data = Data;
-            Capienza = _capienza;
-            Prenotazioni = 0; 
+           Data = DateTime.ParseExact(data, "dd/MM/yyyy", null);
+           this.Title = Title;
+           Capienza = _capienza;
+           Prenotazioni = 0; 
+        }
+
+        public DateTime Data
+        {
+            get {  return data ; }
+            set
+            {
+                if(value < DateTime.Today) // controllo per verificare che la data immessa sia successiva alla data odierna (il metodo .today di DateTime fa questo)
+                {
+                    throw new ArgumentException("La data non può essere precedente a oggi");
+                }
+                Data = value ;  
+            }
         }
        public int Capienza //eccezione nel caso in cui capienza sia negativo
         {
