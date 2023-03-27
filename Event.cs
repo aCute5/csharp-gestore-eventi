@@ -59,7 +59,7 @@ namespace csharp_gestore_eventi
             }
             Prenotazioni += nuovePrenotazioni;
         }
-        public void DisdiciPosti(int disdetta)
+        public   void DisdiciPosti(int disdetta)
         {
             if(Prenotazioni <= 0 )
             {

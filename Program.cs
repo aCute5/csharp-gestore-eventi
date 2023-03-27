@@ -27,7 +27,7 @@ Console.WriteLine("Ecco i posti disponibili" +  postiDisponibili);
 Console.WriteLine("Hai dei posti da disdire?");
 int deletePrenotazioni = (int)Convert.ToInt64((Console.ReadLine()));
 nuovoEvento.DisdiciPosti(deletePrenotazioni);
-int nuovipostiDisponibili = inputCapienza - nuovePrenotazioni + deletePrenotazioni;
+int nuovipostiDisponibili = inputCapienza - nuovePrenotazioni + deletePrenotazioni; // è necessaria questa variabile? Io non credo devo fixare la funzione
 
 Console.WriteLine("Ecco il numero di posti prenotati:" + nuovoEvento.Prenotazioni);
 Console.WriteLine("Ecco i posti disponibili" + nuovipostiDisponibili);
