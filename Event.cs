@@ -29,11 +29,11 @@ namespace csharp_gestore_eventi
             get {  return data ; }
             set
             {
-                if(value < DateTime.Today) // controllo per verificare che la data immessa sia successiva alla data odierna (il metodo .today di DateTime fa questo)
+                if (value < DateTime.Today) // controllo per verificare che la data immessa sia successiva alla data odierna (il metodo .today di DateTime fa questo)
                 {
                     throw new ArgumentException("La data non può essere precedente a oggi");
                 }
-                data = value ;  
+                   data = value ;  
             }
         }
        public int Capienza //eccezione nel caso in cui capienza sia negativo

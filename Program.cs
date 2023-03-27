@@ -2,6 +2,36 @@
 using System.Diagnostics.Tracing;
 using System.Reflection;
 
+
+
+
+Console.WriteLine("Benvenuto nel Progammatore di eventi");
+Console.WriteLine("Dimmi il titolo del Programma Eventi:");
+string TitoloProgramma = Console.ReadLine() ?? "";
+Console.WriteLine("Dimmi quanti eventi vuoi aggiungere:");
+int EventQuantity = Convert.ToInt32(Console.ReadLine());
+ProgrammaEventi NuovoProgramma = new ProgrammaEventi(TitoloProgramma);
+
+for(int i = 0; i < EventQuantity; i++)
+{
+    try
+    {
+        Console.WriteLine("Dimmi le informazioni del" + " " + Convert.ToString(i + 1) + "°" + " " + "evento:");
+        Event nuovoEvento = AskEvent();
+        NuovoProgramma.AddEvent(nuovoEvento);
+        i++;
+    }
+    catch { Console.WriteLine("Errore durante la creazione dell'evento;Assicurati di aver generato il numero giusto"); }
+}
+
+// Stampo i dati dell'Evento
+
+NuovoProgramma.PrintProgram(NuovoProgramma);
+
+
+static Event AskEvent() // function per chiedere tutte le informazioni dell'evento
+{
+
 Console.WriteLine("Ciao! Imposta il tuo nuovo evento");
 
 Console.WriteLine("Dimmi il nome dell'evento:");
@@ -31,4 +61,6 @@ int nuovipostiDisponibili = inputCapienza - nuovePrenotazioni + deletePrenotazio
 
 Console.WriteLine("Ecco il numero di posti prenotati:" + nuovoEvento.Prenotazioni);
 Console.WriteLine("Ecco i posti disponibili" + nuovipostiDisponibili);
+    return nuovoEvento;
+}
 
