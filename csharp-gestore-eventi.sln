@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "csharp-gestore-eventi", "csharp-gestore-eventi.csproj", "{2042492A-BE3C-4042-BF68-39F1B3916DCF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2042492A-BE3C-4042-BF68-39F1B3916DCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2042492A-BE3C-4042-BF68-39F1B3916DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2042492A-BE3C-4042-BF68-39F1B3916DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2042492A-BE3C-4042-BF68-39F1B3916DCF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {001B5FA5-C13B-4FB1-A06E-F9D5FBA14364}
+	EndGlobalSection
+EndGlobal
