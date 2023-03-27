@@ -11,16 +11,17 @@ namespace csharp_gestore_eventi
         public string? Title { get; set; }
         DateTime  data;
         private int _capienza;
-        private  int Prenotazioni;
+        public  int Prenotazioni;
 
-        public Event(string Title, string data, int _capienza) // la data la passo come stringa perchè al momento dell'immissione è una stringa; poi nel blocco tras
+        public Event(string Title, string data, int _capienza, int prenotazioni) 
+            // la data la passo come stringa perchè al momento dell'immissione è una stringa; poi nel blocco tras
             // trasformo  il tipo data in DateTime. Quindi come argomento del construttore posso passare qualsiasi tipo basta che poi nel blocco esso diventi il tipo
             //richiesto nella struttura del codice
         {
            Data = DateTime.ParseExact(data, "dd/MM/yyyy", null);
            this.Title = Title;
            Capienza = _capienza;
-           Prenotazioni = 0; 
+            Prenotazioni = prenotazioni;
         }
 
         public DateTime Data
@@ -32,7 +33,7 @@ namespace csharp_gestore_eventi
                 {
                     throw new ArgumentException("La data non può essere precedente a oggi");
                 }
-                Data = value ;  
+                data = value ;  
             }
         }
        public int Capienza //eccezione nel caso in cui capienza sia negativo
@@ -65,6 +66,7 @@ namespace csharp_gestore_eventi
                 throw new ArgumentException("Non ci sono prenotazioni per questo evento");
             }
             Prenotazioni -= disdetta;
+            _capienza += disdetta;
         }
         public override string ToString()
         {
