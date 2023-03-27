@@ -73,4 +73,15 @@ namespace csharp_gestore_eventi
             return $"{Data:d}";     
         }
     }
+    internal class Conferenza : Event
+    {
+        string relatore { get; set; }
+        double price { get; set; }
+        public Conferenza(string Title, string data, int _capienza, int prenotazioni, string relatore, double price) : base(Title, data, _capienza, prenotazioni)
+        {
+            this.relatore = relatore;
+            this.price = price;
+        }
+    }
+
 }

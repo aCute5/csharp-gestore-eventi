@@ -21,7 +21,7 @@ for(int i = 0; i < EventQuantity; i++)
         NuovoProgramma.AddEvent(nuovoEvento);
         i++;
     }
-    catch { Console.WriteLine("Errore durante la creazione dell'evento;Assicurati di aver generato il numero giusto"); }
+    catch { Console.WriteLine("Errore durante la creazione de   ll'evento;Assicurati di aver generato il numero giusto"); }
 }
 
 // Stampo i dati dell'Evento
